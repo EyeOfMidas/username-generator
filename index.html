@@ -922,6 +922,7 @@ let decorations = [
     {prefix: "", postfix: "", separator:""},
     {prefix: "", postfix: "", separator:""},
     {prefix: "", postfix: "", separator:"-"},
+    {prefix: "", postfix: "", separator:"-"},
     {prefix: "", postfix: "", separator:"."},
     {prefix: "xX", postfix: "Xx", separator:""},
     {prefix: "x", postfix: "x", separator:"x"},
@@ -936,7 +937,6 @@ let decorations = [
     {prefix: "Miss", postfix: "", separator:""},
     {prefix: "Doctor", postfix: "", separator:""},
     {prefix: "", postfix: "PhD", separator:""},
-    {prefix: "", postfix: "TheWizard", separator:""},
 ]
 
 
@@ -950,15 +950,20 @@ function randomName() {
 let templates = [
     `${decoration.prefix}${animal}${decoration.postfix}`,
     `${decoration.prefix}${animal}${decoration.postfix}`.randomize(),
+    `${decoration.prefix}${animal}${decoration.separator}${yearNumber}${decoration.postfix}`,
+    `${decoration.prefix}${animal}${decoration.separator}${yearNumber.substr(2)}${decoration.postfix}`,
     `${decoration.prefix}${color}${decoration.separator}${animal}${decoration.postfix}`,
     `${decoration.prefix}${color}${decoration.separator}${animal}${decoration.postfix}`.lowercase(),
     `${decoration.prefix}${color}${decoration.separator}${animal}${decoration.postfix}`.randomize(),
-    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.separator}${yearNumber.substr(2)}${decoration.postfix}`,
-    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.postfix}`,
+    `${decoration.prefix}${color}${decoration.separator}${animal}${decoration.separator}${yearNumber}${decoration.postfix}`,
+    `${decoration.prefix}${color}${decoration.separator}${animal}${decoration.separator}${yearNumber.substr(2)}${decoration.postfix}`,
     `${decoration.prefix}${color}${decoration.separator}${yearNumber}${decoration.postfix}`,
+    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.postfix}`,
+    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.postfix}`.lowercase(),
+    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.postfix}`.randomize(),
+    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.separator}${yearNumber}${decoration.postfix}`,
+    `${decoration.prefix}${adjective}${decoration.separator}${animal}${decoration.separator}${yearNumber.substr(2)}${decoration.postfix}`,
     `${decoration.prefix}${yearNumber}${decoration.separator}${color}${decoration.postfix}`,
-    `${decoration.prefix}${animal}${decoration.separator}${yearNumber}${decoration.postfix}`,
-    `${decoration.prefix}${animal}${decoration.separator}${yearNumber.substr(2)}${decoration.postfix}`,
     `${decoration.prefix}${car}${decoration.separator}${yearNumber}${decoration.postfix}`,
     `${decoration.prefix}${color}${decoration.separator}${car}${decoration.separator}${yearNumber}${decoration.postfix}`,
 ]
